@@ -1,0 +1,16 @@
+def score(answers, correct_answers):
+    C = 0
+    I = 0
+    for i,y in zip(answers,correct_answers):
+        if i == y:
+            C+=1
+        elif i == 'x':
+            pass
+        else:
+            I+=1
+    return max(C-I,0)
+
+
+assert score("TFxT", "TFTF")== 1
+assert score("FTxT", "TFTF")== 0
+assert score("FTxTTx", "FTTTFF")== 2
